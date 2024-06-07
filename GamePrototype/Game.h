@@ -1,5 +1,10 @@
 #pragma once
 #include "BaseGame.h"
+#include "Texture.h"
+
+class AntManager;
+class LevelManager;
+
 class Game : public BaseGame
 {
 public:
@@ -22,7 +27,10 @@ public:
 	void ProcessMouseUpEvent( const SDL_MouseButtonEvent& e ) override;
 
 private:
-
+	LevelManager* m_LevelManagerPtr{};
+	AntManager* m_AntManagerPtr{};
+	int m_tutorialTracker{};
+	Texture* m_TutorialText{};
 	// FUNCTIONS
 	void Initialize();
 	void Cleanup( );
